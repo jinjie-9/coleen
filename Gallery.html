@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/CSS" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="Image/Logo.png" type="Images">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/61a6ca8d1a.js" crossorigin="anonymous"></script>
+</head>     
+<body>
+    <audio autoplay loop>
+        <source src="Gallery/One Direction - What Makes You Beautiful (Lyrics).mp3" type="audio/ogg">
+    </audio>
+    <!--Navigation Bar-->
+    <a id="top"></a>
+    <nav class="navbar">
+            <div id="logo"><a href="index.html"><img src="Image/Logo.png" alt="Coleen Logo"></a></div>
+            <ul >
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="Message.html">Message</a>
+                </li>
+
+                <li>
+                    <a href="Gallery.html">Gallery</a>
+                </li>
+            </ul>        
+    </nav>
+    <!--End of Navigation Bar-->
+
+    <div class="galley-main-container">
+        <p style="margin-top: 100px;">~ Memory board ~</p>
+        <div class="content">
+            
+            <div class="gallery-image">
+                <img src="Gallery/Screenshot 2023-03-31 120211.png">
+                <img src="Gallery/Screenshot 2023-03-31 120248.png">
+                <img src="Gallery/Screenshot 2023-03-31 120305.png">
+                <img src="Gallery/Screenshot 2023-03-31 120327.png">
+                <img src="Gallery/2f849a8b-5a6a-4077-95b8-986de787a300.jpg">
+                <img src="Gallery/Screenshot 2023-03-31 120415.png">
+                <img src="Gallery/b5d4ff25-9845-4107-8e3b-c42ea2fd58fc.jpg">
+                <img src="Gallery/4d50363f-38bf-4b26-b237-ec95df5779cb.jpg">
+                <img src="Gallery/0a4edb76-7e36-4834-b26b-bea57bc66ea8.jpg">
+                <img src="Gallery/ab06bf54-d3cc-47a4-a71e-2226b118d49c.jpg">
+                <img src="Gallery/5d64cc3d-a136-466c-8371-a55f08f89558.jpg">
+                <img src="Gallery/bab3bfb1-803a-490e-b0b8-ad8c78a8ef87.jpg">
+                <img src="Gallery/3a58c06a-7de7-4532-b419-990b3c18dffd.jpg">
+                <img src="Gallery/8be03291-34f0-469f-b421-b977fa8957eb.jpg">
+                <img src="Gallery/d5d68d25-9660-4843-ad6c-874f758eed6d.jpg">
+                <img src="Gallery/a925eb71-cb2f-4a01-8cd8-9e67d1ed6629.jpg">
+                <img src="Gallery/9e1b1be8-e737-443a-b1e7-60249c7ed840.jpg">
+                <img src="Gallery/f562ac37-6fd6-4c76-a0a5-90907d4ba6e0.jpg">
+                <img src="Gallery/4b4b24c0-b1b2-4c59-94bf-168e46700ae0.jpg">
+            </div>
+            <div onclick="side_slide(-1)" class="slide left">
+                <span class="fas fa-angle-left"></span>
+            </div>
+            <div onclick="side_slide(1)" class="slide right">
+                <span class="fas fa-angle-right"></span>
+            </div>
+            <div class="btn-slider">
+                <span onclick="btn_slide(1)"></span>
+                <span onclick="btn_slide(2)"></span>
+                <span onclick="btn_slide(3)"></span>
+                <span onclick="btn_slide(4)"></span>
+                <span onclick="btn_slide(5)"></span>
+                <span onclick="btn_slide(6)"></span>
+                <span onclick="btn_slide(7)"></span>
+                <span onclick="btn_slide(8)"></span>
+                <span onclick="btn_slide(9)"></span>
+                <span onclick="btn_slide(10)"></span>
+                <span onclick="btn_slide(11)"></span>
+                <span onclick="btn_slide(12)"></span>
+                <span onclick="btn_slide(13)"></span>
+                <span onclick="btn_slide(14)"></span>
+                <span onclick="btn_slide(15)"></span>
+                <span onclick="btn_slide(16)"></span>
+                <span onclick="btn_slide(17)"></span>
+                <span onclick="btn_slide(18)"></span>
+                <span onclick="btn_slide(19)"></span>
+            </div>
+
+            
+        </div>
+        <video controls>
+            <source src="Gallery/5fad5ad61bde4dd8beefde42f7a098f6.mov" type="video/mp4">
+        </video>
+
+        <video controls>
+            <source src="Gallery/a15e9116a45840ac8ea8c0f09d08b120.mov" type="video/mp4">
+        </video>
+
+        <video controls>
+            <source src="Gallery/fb585da55399468ab390904cfdf31bf8.MOV" type="video/mp4">
+        </video>
+        <!--The indexValue of side_slide will keep adding one or minus one until it exits the number of image.-->
+        <script type="text/javascript">
+            var indexValue = 1;
+            showImg(indexValue);
+            function btn_slide(n){showImg(indexValue = n);}
+            function side_slide(n){showImg(indexValue += n);}
+            function showImg(n){
+                var i ;
+                const img = document.querySelectorAll('.gallery-image img');
+                const slider = document.querySelectorAll('.btn-slider span');
+                if (n > img.length){indexValue = 1}
+                if (n < 1){indexValue = img.length}
+                for (i = 0; i < img.length; i++){
+                    img[i].style.display = "none";
+                }
+                for (i = 0; i < slider.length; i++){
+                    slider[i].style.background =  "rgba(255,255,255,0.1)";
+                }
+                img[indexValue-1].style.display = "block";
+                slider[indexValue-1].style.background = "white";
+            }
+        </script>
+    </div>
+
+    <div class="dir-container">
+                    
+        <a href="index.html"> 
+            <button class="dir-back-btn" style="margin-top: -25px;"><i class="fa fa-angle-double-left"></i> Previous page</button>
+        </a>
+        <a href="#top">
+            <button class="dir-top-btn" style="margin-left: 750px;"><i class="fa fa-angle-double-up"></i></button>
+        </a>
+        
+    </div> 
+</body>
+</html>
